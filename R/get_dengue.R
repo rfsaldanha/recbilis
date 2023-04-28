@@ -94,7 +94,7 @@ get_dengue <- function(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL){
       dplyr::mutate(
         p1 = substr(.data$date, 0, 4),
         p2 = stringr::str_pad(substr(.data$date, 6, 8), 2, pad = "0"),
-        date = paste0(p1, "-", p2)
+        date = paste0(.data$p1, "-", .data$p2)
       ) %>%
       dplyr::select(-.data$p1, -.data$p2)
 
