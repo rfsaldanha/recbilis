@@ -76,7 +76,7 @@ get_dengue <- function(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL){
 
   # Group by space and time aggregations
   res <- res %>%
-    dplyr::group_by(rlang::sym(agg), .data$date) %>%
+    dplyr::group_by(agg = rlang::sym(agg), agg_time = .data$date) %>%
     dplyr::summarise(freq = dplyr::n()) %>%
     dplyr::ungroup()
 
@@ -86,15 +86,18 @@ get_dengue <- function(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL){
 
   # Convert variable
   res <- res %>%
-    dplyr::mutate(freq = as.numeric(.data$freq))
+    dplyr::mutate(
+      agg = as.numeric(.data$agg),
+      freq = as.numeric(.data$freq)
+    )
 
   # Format month and week dates
   if(agg_time %in% c("month", "week")){
     res <- res %>%
       dplyr::mutate(
-        p1 = substr(.data$date, 0, 4),
-        p2 = stringr::str_pad(substr(.data$date, 6, 8), 2, pad = "0"),
-        date = paste0(.data$p1, "-", .data$p2)
+        p1 = substr(.data$agg_time, 0, 4),
+        p2 = stringr::str_pad(substr(.data$agg_time, 6, 8), 2, pad = "0"),
+        agg_time = paste0(.data$p1, "-", .data$p2)
       ) %>%
       dplyr::select(-.data$p1, -.data$p2)
 
