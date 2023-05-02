@@ -46,12 +46,7 @@ get_dengue <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b 
   on.exit(DBI::dbDisconnect(conn = conn))
 
   # Check if table is available
-  if(!DBI::dbExistsTable(
-    conn = conn,
-    DBI::Id(schema = psql_schema, table = psql_table)
-  )){
-    stop(glue::glue("Table '{psql_table}' does not exist on '{psql_schema}' schema of '{psql_db}' database on '{psql_host}' host."))
-  }
+  stopifnot(check_table_avail(conn = conn, table = psql_table))
 
   # Lazy table abstraction
   dengue_tb <- dplyr::tbl(conn, DBI::Id(schema = psql_schema, table = psql_table))
