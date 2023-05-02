@@ -132,7 +132,7 @@ get_chikungunya <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, ida
         p2 = stringr::str_pad(substr(.data$agg_time, 6, 8), 2, pad = "0"),
         agg_time = paste0(.data$p1, "-", .data$p2)
       ) %>%
-      dplyr::select(-.data$p1, -.data$p2)
+      dplyr::select(-"p1", -"p2")
 
   }
 
