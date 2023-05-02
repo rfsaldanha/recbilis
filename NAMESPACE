@@ -3,5 +3,6 @@
 export("%>%")
 export(check_table_avail)
 export(get_dengue)
+export(get_zika)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)
