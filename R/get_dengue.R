@@ -4,6 +4,8 @@
 #' @param agg_time character. Time aggregation level. \code{year} for yearly data. \code{month} for monthly data. \code{week} for weekly data. Defaults to \code{year}.
 #' @param ano vector. Year of the case.
 #' @param sexo character. Sex of the case. \code{Masculino} for males, \code{Feminino} for females and \code{Ignorado} for unknown.
+#' @param idade_a numeric. Minimum age of the deceased, in years.
+#' @param idade_b numeric. Maximum age of the deceased, in years.
 #' @param psql_user character. psql username. If not provided, the function will look for it on renviron.
 #' @param psql_pwd character. psql password. If not provided, the function will look for it on renviron.
 #'
@@ -11,7 +13,7 @@
 #'
 #' @importFrom rlang .data
 #' @export
-get_dengue <- function(agg, agg_time, ano, sexo = NULL, psql_user = NULL, psql_pwd = NULL){
+get_dengue <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = NULL, psql_user = NULL, psql_pwd = NULL){
   # Function argument check
   checkmate::assert_choice(x = agg, choices = c("mun_res"))
   checkmate::assert_choice(x = agg_time, choices = c("year", "month", "week"))
@@ -77,6 +79,20 @@ get_dengue <- function(agg, agg_time, ano, sexo = NULL, psql_user = NULL, psql_p
       res <- res %>%
         dplyr::filter(.data$sex == "I")
     }
+  }
+
+  # Filter by age
+  if(!is.null(idade_a) & is.null(idade_b)){
+    res <- res %>%
+      dplyr::filter(.data$age <= idade_a)
+  }
+  if(!is.null(idade_b) & is.null(idade_a)){
+    res <- res %>%
+      dplyr::filter(.data$age <= idade_b)
+  }
+  if(!is.null(idade_a) & !is.null(idade_b)){
+    res <- res %>%
+      dplyr::filter(.data$age >= idade_a & .data$age <= idade_b)
   }
 
   # Create date variable
