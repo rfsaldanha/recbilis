@@ -46,7 +46,9 @@ get_dengue <- function(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL){
   if(!DBI::dbExistsTable(
     conn = conn,
     DBI::Id(schema = psql_schema, table = psql_table)
-  )){stop(glue::glue("Table '{psql_table}' does not exist on '{psql_schema}' schema of '{psql_db}' database on '{psql_host}' host."))}
+  )){
+    stop(glue::glue("Table '{psql_table}' does not exist on '{psql_schema}' schema of '{psql_db}' database on '{psql_host}' host."))
+  }
 
   # Lazy table abstraction
   dengue_tb <- dplyr::tbl(conn, DBI::Id(schema = psql_schema, table = psql_table))
@@ -74,7 +76,7 @@ get_dengue <- function(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL){
       dplyr::mutate(date = paste0(.data$year, "-", .data$epiweek))
   }
 
-  # Group by space and time aggregations
+  # Group and count records by space and time aggregations
   res <- res %>%
     dplyr::group_by(agg = rlang::sym(agg), agg_time = .data$date) %>%
     dplyr::summarise(freq = dplyr::n()) %>%
