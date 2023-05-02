@@ -48,7 +48,16 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_dengue</span><span class="op">(</span><span class="va">agg</span>, <span class="va">agg_time</span>, <span class="va">ano</span>, psql_user <span class="op">=</span> <span class="cn">NULL</span>, psql_pwd <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_dengue</span><span class="op">(</span></span>
+<span>  <span class="va">agg</span>,</span>
+<span>  <span class="va">agg_time</span>,</span>
+<span>  <span class="va">ano</span>,</span>
+<span>  sexo <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  idade_a <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  idade_b <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  psql_user <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  psql_pwd <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -63,6 +72,18 @@
 
 <dt>ano</dt>
 <dd><p>vector. Year of the case.</p></dd>
+
+
+<dt>sexo</dt>
+<dd><p>character. Sex of the case. <code>Masculino</code> for males, <code>Feminino</code> for females and <code>Ignorado</code> for unknown.</p></dd>
+
+
+<dt>idade_a</dt>
+<dd><p>numeric. Minimum age of the deceased, in years.</p></dd>
+
+
+<dt>idade_b</dt>
+<dd><p>numeric. Maximum age of the deceased, in years.</p></dd>
 
 
 <dt>psql_user</dt>
