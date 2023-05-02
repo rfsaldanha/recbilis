@@ -18,6 +18,11 @@ get_dengue <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b 
   checkmate::assert_choice(x = agg, choices = c("mun_res"))
   checkmate::assert_choice(x = agg_time, choices = c("year", "month", "week"))
   checkmate::assert_vector(x = ano)
+  checkmate::assert_choice(x = sexo, choices = c("Masculino", "Feminino", "Ignorado"), null.ok = TRUE)
+  checkmate::assert_number(x = idade_a, lower = 0, null.ok = TRUE)
+  checkmate::assert_number(x = idade_b, lower = 0, null.ok = TRUE)
+  checkmate::assert_string(x = psql_user, null.ok = TRUE)
+  checkmate::assert_string(x = psql_pwd, null.ok = TRUE)
 
   # Try to get psql user from renviron if not provided
   if(is.null(psql_user)){
