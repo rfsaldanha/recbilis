@@ -4,7 +4,7 @@
 \alias{get_dengue}
 \title{Get dengue confirmed cases}
 \usage{
-get_dengue(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL)
+get_dengue(agg, agg_time, ano, sexo = NULL, psql_user = NULL, psql_pwd = NULL)
 }
 \arguments{
 \item{agg}{character. Spatial aggregation level. \code{mun_res} for municipality of residence.}
@@ -12,6 +12,8 @@ get_dengue(agg, agg_time, ano, psql_user = NULL, psql_pwd = NULL)
 \item{agg_time}{character. Time aggregation level. \code{year} for yearly data. \code{month} for monthly data. \code{week} for weekly data. Defaults to \code{year}.}
 
 \item{ano}{vector. Year of the case.}
+
+\item{sexo}{character. Sex of the case. \code{Masculino} for males, \code{Feminino} for females and \code{Ignorado} for unknown.}
 
 \item{psql_user}{character. psql username. If not provided, the function will look for it on renviron.}
 
