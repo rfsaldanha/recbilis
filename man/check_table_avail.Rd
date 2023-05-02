@@ -10,8 +10,6 @@ check_table_avail(conn, table)
 \item{conn}{an object from \code{DBI::dbConnect}.}
 
 \item{table}{character. A table name.}
-
-\item{schema}{character. A schema name.}
 }
 \value{
 Logical.

@@ -1,7 +1,6 @@
 #' Check if a table is available in a connection and schema
 #'
 #' @param conn an object from \code{DBI::dbConnect}.
-#' @param schema character. A schema name.
 #' @param table character. A table name.
 #'
 #' @return Logical.
