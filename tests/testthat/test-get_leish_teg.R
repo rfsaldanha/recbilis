@@ -5,6 +5,20 @@ test_that("get_leish_teg with mun_res and year works", {
   expect_gt(nrow(res), 1800)
 })
 
+test_that("get_leish_teg with regsaude_res and year works", {
+  res <- get_leish_teg(agg = "regsaude_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 350)
+})
+
+test_that("get_leish_teg with uf_res and year works", {
+  res <- get_leish_teg(agg = "uf_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 20)
+})
+
 test_that("get_leish_teg with mun_res and month works", {
   res <- get_leish_teg(agg = "mun_res", agg_time = "month", ano = 2010)
 

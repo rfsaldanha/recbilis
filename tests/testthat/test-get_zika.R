@@ -5,6 +5,20 @@ test_that("get_zika with mun_res and year works", {
   expect_gt(nrow(res), 10)
 })
 
+test_that("get_zika with regsaude_res and year works", {
+  res <- get_zika(agg = "regsaude_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 10)
+})
+
+test_that("get_zika with uf_res and year works", {
+  res <- get_zika(agg = "uf_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 5)
+})
+
 test_that("get_zika with mun_res and month works", {
   res <- get_zika(agg = "mun_res", agg_time = "month", ano = 2010)
 

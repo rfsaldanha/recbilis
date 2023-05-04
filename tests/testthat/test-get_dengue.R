@@ -5,6 +5,20 @@ test_that("get_dengue with mun_res and year works", {
   expect_gt(nrow(res), 3700)
 })
 
+test_that("get_dengue with regsaude_res and year works", {
+  res <- get_dengue(agg = "regsaude_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 440)
+})
+
+test_that("get_dengue with uf_res and year works", {
+  res <- get_dengue(agg = "uf_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 20)
+})
+
 test_that("get_dengue with mun_res and month works", {
   res <- get_dengue(agg = "mun_res", agg_time = "month", ano = 2010)
 

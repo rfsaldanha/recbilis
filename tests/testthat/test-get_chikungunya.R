@@ -5,6 +5,20 @@ test_that("get_chikungunya with mun_res and year works", {
   expect_gt(nrow(res), 20)
 })
 
+test_that("get_chikungunya with regsaude_res and year works", {
+  res <- get_chikungunya(agg = "regsaude_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 20)
+})
+
+test_that("get_chikungunya with uf_res and year works", {
+  res <- get_chikungunya(agg = "uf_res", agg_time = "year", ano = 2010)
+
+  expect_equal("tbl_df", class(res)[1])
+  expect_gt(nrow(res), 9)
+})
+
 test_that("get_chikungunya with mun_res and month works", {
   res <- get_chikungunya(agg = "mun_res", agg_time = "month", ano = 2010)
 
