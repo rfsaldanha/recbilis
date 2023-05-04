@@ -45,7 +45,7 @@ get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = 
   )
 
   # Table
-  psql_table <- "zika"
+  psql_table <- "zikat"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
@@ -58,7 +58,7 @@ get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = 
 
   # Variable spatial aggregation
   if (agg == "mun_res"){
-    agg <- "geocod"
+    agg <- "geocodmu"
   }
 
   # Prepare request

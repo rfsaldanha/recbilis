@@ -45,7 +45,7 @@ get_chikungunya <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, ida
   )
 
   # Table
-  psql_table <- "chikungunya"
+  psql_table <- "chikungunyat"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
@@ -58,7 +58,7 @@ get_chikungunya <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, ida
 
   # Variable spatial aggregation
   if (agg == "mun_res"){
-    agg <- "geocod"
+    agg <- "geocodmu"
   }
 
   # Prepare request

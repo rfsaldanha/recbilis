@@ -45,7 +45,7 @@ get_leish_teg <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade
   )
 
   # Table
-  psql_table <- "leish_teg"
+  psql_table <- "leish_tegt"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
@@ -58,7 +58,7 @@ get_leish_teg <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade
 
   # Variable spatial aggregation
   if (agg == "mun_res"){
-    agg <- "geocod"
+    agg <- "geocodmu"
   }
 
   # Prepare request
