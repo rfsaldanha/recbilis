@@ -5,8 +5,8 @@ test_that("get_febre_amarela with mun_res and year works", {
   expect_equal(nrow(res), 2)
 })
 
-test_that("get_febre_amarela with regsaude_res and year works", {
-  res <- get_febre_amarela(agg = "regsaude_res", agg_time = "year", ano = 2010)
+test_that("get_febre_amarela with regsaude_449_res and year works", {
+  res <- get_febre_amarela(agg = "regsaude_449_res", agg_time = "year", ano = 2010)
 
   expect_equal("tbl_df", class(res)[1])
   expect_equal(nrow(res), 2)

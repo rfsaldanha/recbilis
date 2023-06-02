@@ -1,6 +1,6 @@
 #' Get zika confirmed cases
 #'
-#' @param agg character. Spatial aggregation level. \code{uf_res} for UF of residence. \code{regsaude_res} for regiao de saude of residence. \code{mun_res} for municipality of residence.
+#' @param agg character. Spatial aggregation level. \code{uf_res} for UF of residence. \code{regsaude_449_res} for regiao de saude of residence. \code{mun_res} for municipality of residence.
 #' @param agg_time character. Time aggregation level. \code{year} for yearly data. \code{month} for monthly data. \code{week} for weekly data. Defaults to \code{year}.
 #' @param ano vector. Year of the case.
 #' @param sexo character. Sex of the case. \code{Masculino} for males, \code{Feminino} for females and \code{Ignorado} for unknown.
@@ -15,7 +15,7 @@
 #' @export
 get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = NULL, psql_user = NULL, psql_pwd = NULL){
   # Function argument check
-  checkmate::assert_choice(x = agg, choices = c("uf_res", "regsaude_res", "mun_res"))
+  checkmate::assert_choice(x = agg, choices = c("uf_res", "regsaude_449_res", "mun_res"))
   checkmate::assert_choice(x = agg_time, choices = c("year", "month", "week"))
   checkmate::assert_vector(x = ano)
   checkmate::assert_choice(x = sexo, choices = c("Masculino", "Feminino", "Ignorado"), null.ok = TRUE)
@@ -59,7 +59,7 @@ get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = 
   # Variable spatial aggregation
   if (agg == "uf_res"){
     agg <- "geocoduf"
-  } else if(agg == "regsaude_res"){
+  } else if(agg == "regsaude_449_res"){
     agg <- "geocodrs"
   } else if(agg == "mun_res"){
     agg <- "geocodmu"

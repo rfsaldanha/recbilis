@@ -5,8 +5,8 @@ test_that("get_chikungunya with mun_res and year works", {
   expect_gt(nrow(res), 20)
 })
 
-test_that("get_chikungunya with regsaude_res and year works", {
-  res <- get_chikungunya(agg = "regsaude_res", agg_time = "year", ano = 2010)
+test_that("get_chikungunya with regsaude_449_res and year works", {
+  res <- get_chikungunya(agg = "regsaude_449_res", agg_time = "year", ano = 2010)
 
   expect_equal("tbl_df", class(res)[1])
   expect_gt(nrow(res), 20)

@@ -16,7 +16,7 @@ get_chikungunya(
 )
 }
 \arguments{
-\item{agg}{character. Spatial aggregation level. \code{uf_res} for UF of residence. \code{regsaude_res} for regiao de saude of residence. \code{mun_res} for municipality of residence.}
+\item{agg}{character. Spatial aggregation level. \code{uf_res} for UF of residence. \code{regsaude_449_res} for regiao de saude of residence. \code{mun_res} for municipality of residence.}
 
 \item{agg_time}{character. Time aggregation level. \code{year} for yearly data. \code{month} for monthly data. \code{week} for weekly data. Defaults to \code{year}.}
 

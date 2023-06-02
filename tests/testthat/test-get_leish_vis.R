@@ -5,8 +5,8 @@ test_that("get_leish_vis with mun_res and year works", {
   expect_gt(nrow(res), 800)
 })
 
-test_that("get_leish_vis with regsaude_res and year works", {
-  res <- get_leish_vis(agg = "regsaude_res", agg_time = "year", ano = 2010)
+test_that("get_leish_vis with regsaude_449_res and year works", {
+  res <- get_leish_vis(agg = "regsaude_449_res", agg_time = "year", ano = 2010)
 
   expect_equal("tbl_df", class(res)[1])
   expect_gt(nrow(res), 240)
