@@ -4,16 +4,7 @@
 \alias{get_dengue}
 \title{Get dengue confirmed cases}
 \usage{
-get_dengue(
-  agg,
-  agg_time,
-  ano,
-  sexo = NULL,
-  idade_a = NULL,
-  idade_b = NULL,
-  psql_user = NULL,
-  psql_pwd = NULL
-)
+get_dengue(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = NULL)
 }
 \arguments{
 \item{agg}{character. Spatial aggregation level. \code{uf_res} for UF of residence. \code{regsaude_449_res} for regiao de saude of residence. \code{mun_res} for municipality of residence.}
@@ -27,10 +18,6 @@ get_dengue(
 \item{idade_a}{numeric. Minimum age of the deceased, in years.}
 
 \item{idade_b}{numeric. Maximum age of the deceased, in years.}
-
-\item{psql_user}{character. psql username. If not provided, the function will look for it on renviron.}
-
-\item{psql_pwd}{character. psql password. If not provided, the function will look for it on renviron.}
 }
 \value{
 A tibble.

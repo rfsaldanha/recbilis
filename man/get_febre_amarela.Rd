@@ -10,9 +10,7 @@ get_febre_amarela(
   ano,
   sexo = NULL,
   idade_a = NULL,
-  idade_b = NULL,
-  psql_user = NULL,
-  psql_pwd = NULL
+  idade_b = NULL
 )
 }
 \arguments{
@@ -27,10 +25,6 @@ get_febre_amarela(
 \item{idade_a}{numeric. Minimum age of the deceased, in years.}
 
 \item{idade_b}{numeric. Maximum age of the deceased, in years.}
-
-\item{psql_user}{character. psql username. If not provided, the function will look for it on renviron.}
-
-\item{psql_pwd}{character. psql password. If not provided, the function will look for it on renviron.}
 }
 \value{
 A tibble.

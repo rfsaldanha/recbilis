@@ -6,14 +6,12 @@
 #' @param sexo character. Sex of the case. \code{Masculino} for males, \code{Feminino} for females and \code{Ignorado} for unknown.
 #' @param idade_a numeric. Minimum age of the deceased, in years.
 #' @param idade_b numeric. Maximum age of the deceased, in years.
-#' @param psql_user character. psql username. If not provided, the function will look for it on renviron.
-#' @param psql_pwd character. psql password. If not provided, the function will look for it on renviron.
 #'
 #' @return A tibble.
 #'
 #' @importFrom rlang .data
 #' @export
-get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = NULL, psql_user = NULL, psql_pwd = NULL){
+get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = NULL){
   # Function argument check
   checkmate::assert_choice(x = agg, choices = c("uf_res", "regsaude_449_res", "mun_res"))
   checkmate::assert_choice(x = agg_time, choices = c("year", "month", "week"))
@@ -21,31 +19,13 @@ get_zika <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b = 
   checkmate::assert_choice(x = sexo, choices = c("Masculino", "Feminino", "Ignorado"), null.ok = TRUE)
   checkmate::assert_number(x = idade_a, lower = 0, null.ok = TRUE)
   checkmate::assert_number(x = idade_b, lower = 0, null.ok = TRUE)
-  checkmate::assert_string(x = psql_user, null.ok = TRUE)
-  checkmate::assert_string(x = psql_pwd, null.ok = TRUE)
-
-  # Try to get psql user from renviron if not provided
-  if(is.null(psql_user)){
-    psql_user <- get_psql_user()
-  }
-
-  # Try to get psql password from renviron if not provided
-  if(is.null(psql_pwd)){
-    psql_pwd <- get_psql_pwd()
-  }
 
   # Creates database connection
-  conn <- DBI::dbConnect(
-    RPostgres::Postgres(),
-    dbname = psql_db,
-    host = psql_host,
-    port = psql_port,
-    user = psql_user,
-    password = psql_pwd
-  )
+  conn <- db_connect()
+  psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "zikat"
+  psql_table <- "zika"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
