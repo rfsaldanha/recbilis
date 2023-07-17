@@ -25,7 +25,7 @@ get_leish_teg <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "leish_teg"
+  psql_table <- "leish_tegt"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))

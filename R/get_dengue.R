@@ -25,7 +25,7 @@ get_dengue <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b 
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "dengue"
+  psql_table <- "denguet"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))

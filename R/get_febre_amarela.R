@@ -25,7 +25,7 @@ get_febre_amarela <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, i
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "febreamarela"
+  psql_table <- "febreamarelat"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))

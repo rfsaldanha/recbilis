@@ -25,7 +25,7 @@ get_chagas <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, idade_b 
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "chagas"
+  psql_table <- "chagast"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))

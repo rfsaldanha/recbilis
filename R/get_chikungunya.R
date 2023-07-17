@@ -25,7 +25,7 @@ get_chikungunya <- function(agg, agg_time, ano, sexo = NULL, idade_a = NULL, ida
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "chikungunya"
+  psql_table <- "chikungunyat"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
