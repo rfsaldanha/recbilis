@@ -1,54 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/404.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/index.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/check_table_avail.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_chagas.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_chikungunya.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_dengue.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_febre_amarela.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_leish_teg.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_leish_vis.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_malaria.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_psql_parameters.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/get_zika.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://rfsaldanha.github.io/recbilis/reference/pipe.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://rfsaldanha.github.io/recbilis/404.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/LICENSE-text.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/LICENSE.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/authors.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/index.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/check_table_avail.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_chagas.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_chikungunya.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_dengue.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_febre_amarela.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_leish_teg.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_leish_vis.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_malaria.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_psql_parameters.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/get_zika.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/index.html</loc></url>
+<url><loc>https://rfsaldanha.github.io/recbilis/reference/pipe.html</loc></url>
 </urlset>
+
