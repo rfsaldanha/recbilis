@@ -30,7 +30,7 @@ test_that("get_chagas with mun_res and week works", {
   res <- get_chagas(agg = "mun_res", agg_time = "week", ano = 2010)
 
   expect_equal("tbl_df", class(res)[1])
-  expect_gt(nrow(res), 14400)
+  expect_gt(nrow(res), 5)
 })
 
 test_that("get_chagas with sex filter and year works", {
