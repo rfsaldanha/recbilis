@@ -6,7 +6,11 @@ test_that("get_febre_amarela with mun_res and year works", {
 })
 
 test_that("get_febre_amarela with regsaude_449_res and year works", {
-  res <- get_febre_amarela(agg = "regsaude_449_res", agg_time = "year", ano = 2010)
+  res <- get_febre_amarela(
+    agg = "regsaude_449_res",
+    agg_time = "year",
+    ano = 2010
+  )
 
   expect_equal("tbl_df", class(res)[1])
   expect_equal(nrow(res), 2)
@@ -35,9 +39,24 @@ test_that("get_febre_amarela with mun_res and week works", {
 
 test_that("get_febre_amarela with sex filter and year works", {
   res0 <- get_febre_amarela(agg = "mun_res", agg_time = "year", ano = 2010)
-  res1 <- get_febre_amarela(agg = "mun_res", sexo = "Masculino", agg_time = "year", ano = 2010)
-  res2 <- get_febre_amarela(agg = "mun_res", sexo = "Feminino", agg_time = "year", ano = 2010)
-  res3 <- get_febre_amarela(agg = "mun_res", sexo = "Ignorado", agg_time = "year", ano = 2010)
+  res1 <- get_febre_amarela(
+    agg = "mun_res",
+    sexo = "Masculino",
+    agg_time = "year",
+    ano = 2010
+  )
+  res2 <- get_febre_amarela(
+    agg = "mun_res",
+    sexo = "Feminino",
+    agg_time = "year",
+    ano = 2010
+  )
+  res3 <- get_febre_amarela(
+    agg = "mun_res",
+    sexo = "Ignorado",
+    agg_time = "year",
+    ano = 2010
+  )
 
   expect_equal("tbl_df", class(res0)[1])
   expect_equal("tbl_df", class(res1)[1])
@@ -51,9 +70,25 @@ test_that("get_febre_amarela with sex filter and year works", {
 
 test_that("get_febre_amarela with age filters and year works", {
   res0 <- get_febre_amarela(agg = "mun_res", agg_time = "year", ano = 2010)
-  res1 <- get_febre_amarela(agg = "mun_res", idade_a = 10, agg_time = "year", ano = 2010)
-  res2 <- get_febre_amarela(agg = "mun_res", idade_b = 50, agg_time = "year", ano = 2010)
-  res3 <- get_febre_amarela(agg = "mun_res", idade_a = 10, idade_b = 50, agg_time = "year", ano = 2010)
+  res1 <- get_febre_amarela(
+    agg = "mun_res",
+    idade_a = 10,
+    agg_time = "year",
+    ano = 2010
+  )
+  res2 <- get_febre_amarela(
+    agg = "mun_res",
+    idade_b = 50,
+    agg_time = "year",
+    ano = 2010
+  )
+  res3 <- get_febre_amarela(
+    agg = "mun_res",
+    idade_a = 10,
+    idade_b = 50,
+    agg_time = "year",
+    ano = 2010
+  )
 
   expect_equal("tbl_df", class(res0)[1])
   expect_equal("tbl_df", class(res1)[1])
