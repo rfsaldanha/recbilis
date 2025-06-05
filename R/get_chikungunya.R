@@ -39,7 +39,7 @@ get_chikungunya <- function(
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "chikungunya"
+  psql_table <- "chikungunya_sinan"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))

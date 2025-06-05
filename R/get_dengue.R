@@ -39,7 +39,7 @@ get_dengue <- function(
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "dengue"
+  psql_table <- "dengue_sinan"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
