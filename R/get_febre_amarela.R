@@ -39,7 +39,7 @@ get_febre_amarela <- function(
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "febreamarelat"
+  psql_table <- "sinan_febre_amarela"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
@@ -72,13 +72,13 @@ get_febre_amarela <- function(
   if (!is.null(sexo)) {
     if (sexo == "Masculino") {
       res <- res %>%
-        dplyr::filter(.data$sex == "M")
+        dplyr::filter(.data$sex == 1)
     } else if (sexo == "Feminino") {
       res <- res %>%
-        dplyr::filter(.data$sex == "F")
+        dplyr::filter(.data$sex == 2)
     } else if (sexo == "Ignorado") {
       res <- res %>%
-        dplyr::filter(.data$sex == "I")
+        dplyr::filter(.data$sex == 0)
     }
   }
 

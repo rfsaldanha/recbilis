@@ -72,13 +72,13 @@ get_chagas <- function(
   if (!is.null(sexo)) {
     if (sexo == "Masculino") {
       res <- res %>%
-        dplyr::filter(.data$sex == "M")
+        dplyr::filter(.data$sex == 1)
     } else if (sexo == "Feminino") {
       res <- res %>%
-        dplyr::filter(.data$sex == "F")
+        dplyr::filter(.data$sex == 2)
     } else if (sexo == "Ignorado") {
       res <- res %>%
-        dplyr::filter(.data$sex == "I")
+        dplyr::filter(.data$sex == 0)
     }
   }
 
