@@ -39,7 +39,7 @@ get_chagas <- function(
   psql_schema <- get_psql_parameters()$psql_schema
 
   # Table
-  psql_table <- "chagas_sinan"
+  psql_table <- "sinan_chagas"
 
   # Close connection
   on.exit(DBI::dbDisconnect(conn = conn))
